@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # phpstorm project files
 .idea
 
@@ -30,3 +31,7 @@ phpunit.phar
 #Yii stuff
 yii
 yii.bat
+=======
+vendor/
+composer.lock
+>>>>>>> c60797875a879e8d0109d7da15fa439f656d1d09
