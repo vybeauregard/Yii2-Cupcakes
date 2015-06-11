@@ -31,20 +31,7 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>
-<a id="yii2" class="anchor" href="#yii2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yii2</h1>
-
-<h4>
-<a id="lets-make-some-delicious-cupcakes" class="anchor" href="#lets-make-some-delicious-cupcakes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Let's make some delicious cupcakes!</h4>
-
-<p><em>index.php</em></p>
-
-<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c">// Include the Yii framework</span></span>
-<span class="pl-s1"><span class="pl-k">require</span>(<span class="pl-c1">__DIR__</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>/../vendor/yiisoft/yii2/Yii.php<span class="pl-pds">'</span></span>);</span>
-<span class="pl-s1"><span class="pl-c">// Get the configuration</span></span>
-<span class="pl-s1"><span class="pl-smi">$config</span> <span class="pl-k">=</span> <span class="pl-k">require</span>(<span class="pl-c1">__DIR__</span> <span class="pl-k">.</span> <span class="pl-s"><span class="pl-pds">'</span>/../config/web.php<span class="pl-pds">'</span></span>);</span>
-<span class="pl-s1"><span class="pl-c">// Make and launch the application immediately </span></span>
-<span class="pl-s1">(<span class="pl-k">new</span> <span class="pl-c1">yii\web\</span><span class="pl-c1">Application</span>(<span class="pl-smi">$config</span>))<span class="pl-k">-&gt;</span>run();</span></pre></div>
+        <p><em>Before you get started, you'll probably want to <a href="https://github.com/vybeauregard/Yii2-Cupcakes/wiki">get your environment configured</a>.</em></p>
 
 <p><em>config.php</em> holds configuration values for every part of your app.</p>
 
@@ -56,8 +43,23 @@
 <li>url management</li>
 </ul>
 
+<p>The database in the project has been configured to create an SQLite data store in the <code>db</code> directory.</p>
+
+<h2>
+<a id="file-structure" class="anchor" href="#file-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>File structure</h2>
+
+<blockquote>
+<p><em>or, "Keeping the Varmints Out"</em></p>
+</blockquote>
+
+<p>One large concern for any framework is keeping code organized. This fosters a collaborative environment because it makes it easier to deduce where a particular function is being called from. With Yii2, there are a lot of files that need to be accessible to the server, but not accessible from a web browser (e.g. controllers, db config, vendor files). That's where our <code>web</code> folder comes in handy. We will tell the web server that the root of the site is located at <code>web</code> and php will still be able to access all of the other files in our project without exposing them to the world.</p>
+
 <h2>
 <a id="controllers" class="anchor" href="#controllers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Controllers</h2>
+
+<blockquote>
+<p><em>Where do you think <strong>you're</strong> going?</em></p>
+</blockquote>
 
 <p>Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at <code>cupcakes/list</code> to talk to the cupcakes controller and find out what it says to do with <code>actionList()</code>. From the context provided by the verb list, we can deduct that this route will produce a list of all the cupcakes that are available.</p>
 
@@ -144,6 +146,10 @@
 <h2>
 <a id="migrations" class="anchor" href="#migrations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Migrations</h2>
 
+<blockquote>
+<p><em>Are you suggesting coconuts migrate?</em></p>
+</blockquote>
+
 <p>To initialize a new migration, navigate to your project in the command line and execute <code>./yii migrate/create create_cupcakes_table</code>. This will create a new migration file <code>m150610_160800_create_cupcakes_table.php</code> with today's date and time in the file name. Inside the migration class are two methods: <code>up()</code> and <code>down()</code>. When rolling back migrations, <code>down</code> will be executed. When applying a migration, <code>up</code> is executed.
 If you're using a transactional database engine, <code>safeUp()</code> and <code>safeDown()</code> will do the same, but in a transaction-safe manner.
 Since we're just creating a table to hold some cupcakes, we'll just add the <code>createTable()</code> information to <code>up()</code> and the <code>dropTable()</code> command to <code>down()</code>.</p>
@@ -182,6 +188,10 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 <h2>
 <a id="models" class="anchor" href="#models" aria-hidden="true"><span class="octicon octicon-link"></span></a>Models</h2>
 
+<blockquote>
+<p><em>Do a little turn on the catwalk</em></p>
+</blockquote>
+
 <p>Models are fairly straightforward. They tell Yii how our cupcake object is structured and where to find the data when we ask for it. In most cases, we can use Gii to automatically generate a model based off of the table structure in the database. This model can be altered and updated after it is generated, but Gii makes sure everything in the table makes it across to the model.</p>
 
 <p><em>Gii can be accessed in dev environments at</em> http://your-dev-url/gii/</p>
@@ -192,6 +202,10 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 
 <h2>
 <a id="views" class="anchor" href="#views" aria-hidden="true"><span class="octicon octicon-link"></span></a>Views</h2>
+
+<blockquote>
+<p><em>I just adore a penthouse view</em></p>
+</blockquote>
 
 <p>You'll notice in our Controller, the action we created was called <code>actionList</code>. </p>
 
