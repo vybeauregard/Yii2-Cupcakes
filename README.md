@@ -53,7 +53,7 @@ id|name|description|cake_flavor_1|cake_flavor_2|cake_color|icing_flavor|icing_co
 3|Power Up!|Mushrooms inspired by Super Mario Bros.|Carrot Cake|null|Brown|Cream Cheese|White|Yes|245
 
 
-Before we wire up a model and view to the `controllers/cupcakes.php`, let's create our table using Yii's migration feature.
+Before we wire up a model and view to the `controllers/CupcakesController.php`, let's create our table using Yii's migration feature.
 
 ##Migrations
 > _[Are you suggesting coconuts migrate?](http://youtu.be/w8Rn_f75UHs#t=80)_
@@ -106,7 +106,7 @@ Take a look at the wiki to quickly [dip your toes in the Gii waters](https://git
 
 Of particular note in the `Cupcakes` model Gii generates is the `rules()` method, which allows you to set validation parameters for each field. Also, if your table uses field names that aren't super-great for human-readability, you can map them to better descriptors in the `attributeLabels()` method.
 
-Now that we have a `Cupcakes` model and a `Cupcakes` controller, it's time to make a Cupcakes view!
+Now that we have a `Cupcakes` model and a `CupcakesController`, it's time to make a Cupcakes view!
 
 ##Views
 > _[I just adore a penthouse view](http://youtu.be/DrbPAt1_vc4#t=40)_
