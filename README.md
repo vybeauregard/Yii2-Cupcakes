@@ -13,7 +13,7 @@ _config.php_ holds configuration values for every part of your app.
 The database in the project has been configured to create an SQLite data store in the `db` directory.
 
 ##File structure
-> _or, "Keeping the Varmints Out"_
+> _or, "[Keeping the Varmints Out](http://youtu.be/THWCH2Nwsss)"_
 
 One large concern for any framework is keeping code organized. This fosters a collaborative environment because it makes it easier to deduce where a particular function is being called from. With Yii2, there are a lot of files that need to be accessible to the server, but not accessible from a web browser (e.g. controllers, db config, vendor files). That's where our `web` folder comes in handy. We will tell the web server that the root of the site is located at `web` and php will still be able to access all of the other files in our project without exposing them to the world.
 
@@ -56,7 +56,7 @@ id|name|description|cake_flavor_1|cake_flavor_2|cake_color|icing_flavor|icing_co
 Before we wire up a model and view to the `controllers/cupcakes.php`, let's create our table using Yii's migration feature.
 
 ##Migrations
-> _Are you suggesting coconuts migrate?_
+> _[Are you suggesting coconuts migrate?](http://youtu.be/w8Rn_f75UHs#t=80)_
 
 To initialize a new migration, navigate to your project in the command line and execute `./yii migrate/create create_cupcakes_table`. This will create a new migration file `m150610_160800_create_cupcakes_table.php` with today's date and time in the file name. Inside the migration class are two methods: `up()` and `down()`. When rolling back migrations, `down` will be executed. When applying a migration, `up` is executed.
 If you're using a transactional database engine, `safeUp()` and `safeDown()` will do the same, but in a transaction-safe manner.
@@ -96,7 +96,7 @@ The `Schema::TYPE_` constants allow Yii to remain database-engine agnostic if yo
 Once the migration file is saved, return to the command line and execute `./yii migrate/up`. You will be prompted to confirm the alteration, then the cupcakes table will be created.
 
 ##Models
-> _Do a little turn on the catwalk_
+> _[Do a little turn on the catwalk](http://youtu.be/YFmsgHfuXpA#t=56)_
 
 Models are fairly straightforward. They tell Yii how our cupcake object is structured and where to find the data when we ask for it. In most cases, we can use Gii to automatically generate a model based off of the table structure in the database. This model can be altered and updated after it is generated, but Gii makes sure everything in the table makes it across to the model.
 
@@ -107,7 +107,7 @@ Of particular note in the cupcake model Gii generates is the `rules()` method, w
 Now that we have a Cupcake model and a Cupcake controller, it's time to make a Cupcake view!
 
 ##Views
-> _I just adore a penthouse view_
+> _[I just adore a penthouse view](http://youtu.be/DrbPAt1_vc4#t=40)_
 
 You'll notice in our Controller, the action we created was called `actionList`. 
 ```php
