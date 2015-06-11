@@ -27,13 +27,13 @@ _controllers/cupcakes.php_
 namespace app\controllers;
 
 use Yii;
-use app\models\Cupcake;
+use app\models\Cupcakes;
 use yii\web\NotFoundHttpException;
 
-class CupcakeController extends Controller
+class CupcakesController extends Controller
 {
   public function actionList(){
-    $model = Cupcake::find();
+    $model = Cupcakes::find();
     if($model === null){
       throw new NotFoundHttpException;
     }
@@ -98,13 +98,15 @@ Once the migration file is saved, return to the command line and execute `./yii 
 ##Models
 > _[Do a little turn on the catwalk](http://youtu.be/YFmsgHfuXpA#t=56)_
 
-Models are fairly straightforward. They tell Yii how our cupcake object is structured and where to find the data when we ask for it. In most cases, we can use Gii to automatically generate a model based off of the table structure in the database. This model can be altered and updated after it is generated, but Gii makes sure everything in the table makes it across to the model.
+Models are fairly straightforward. They tell Yii how our cupcakes object is structured and where to find the data when we ask for it. In most cases, we can use Gii to automatically generate a model based off of the table structure in the database. This model can be altered and updated after it is generated, but Gii makes sure everything in the table makes it across to the model.
 
 _Gii can be accessed in dev environments at_ http://your-dev-url/gii/
 
-Of particular note in the cupcake model Gii generates is the `rules()` method, which allows you to set validation parameters for each field. Also, if your table uses field names that aren't super-great for human-readability, you can map them to better descriptors in the `attributeLabels()` method.
+Take a look at the wiki to quickly [dip your toes in the Gii waters](https://github.com/vybeauregard/Yii2-Cupcakes/wiki/Gii) and create our `Cupcakes` model.
 
-Now that we have a Cupcake model and a Cupcake controller, it's time to make a Cupcake view!
+Of particular note in the `Cupcakes` model Gii generates is the `rules()` method, which allows you to set validation parameters for each field. Also, if your table uses field names that aren't super-great for human-readability, you can map them to better descriptors in the `attributeLabels()` method.
+
+Now that we have a `Cupcakes` model and a `Cupcakes` controller, it's time to make a Cupcakes view!
 
 ##Views
 > _[I just adore a penthouse view](http://youtu.be/DrbPAt1_vc4#t=40)_
