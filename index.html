@@ -49,7 +49,7 @@
 <a id="file-structure" class="anchor" href="#file-structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>File structure</h2>
 
 <blockquote>
-<p><em>or, "Keeping the Varmints Out"</em></p>
+<p><em>or, "<a href="http://youtu.be/THWCH2Nwsss">Keeping the Varmints Out</a>"</em></p>
 </blockquote>
 
 <p>One large concern for any framework is keeping code organized. This fosters a collaborative environment because it makes it easier to deduce where a particular function is being called from. With Yii2, there are a lot of files that need to be accessible to the server, but not accessible from a web browser (e.g. controllers, db config, vendor files). That's where our <code>web</code> folder comes in handy. We will tell the web server that the root of the site is located at <code>web</code> and php will still be able to access all of the other files in our project without exposing them to the world.</p>
@@ -58,7 +58,7 @@
 <a id="controllers" class="anchor" href="#controllers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Controllers</h2>
 
 <blockquote>
-<p><em>Where do you think <strong>you're</strong> going?</em></p>
+<p><em><a href="http://youtu.be/mk74WprmZxY#t=12">Where do you think <strong>you're</strong> going?</a></em></p>
 </blockquote>
 
 <p>Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at <code>cupcakes/list</code> to talk to the cupcakes controller and find out what it says to do with <code>actionList()</code>. From the context provided by the verb list, we can deduct that this route will produce a list of all the cupcakes that are available.</p>
@@ -147,7 +147,7 @@
 <a id="migrations" class="anchor" href="#migrations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Migrations</h2>
 
 <blockquote>
-<p><em>Are you suggesting coconuts migrate?</em></p>
+<p><em><a href="http://youtu.be/w8Rn_f75UHs#t=80">Are you suggesting coconuts migrate?</a></em></p>
 </blockquote>
 
 <p>To initialize a new migration, navigate to your project in the command line and execute <code>./yii migrate/create create_cupcakes_table</code>. This will create a new migration file <code>m150610_160800_create_cupcakes_table.php</code> with today's date and time in the file name. Inside the migration class are two methods: <code>up()</code> and <code>down()</code>. When rolling back migrations, <code>down</code> will be executed. When applying a migration, <code>up</code> is executed.
@@ -189,7 +189,7 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 <a id="models" class="anchor" href="#models" aria-hidden="true"><span class="octicon octicon-link"></span></a>Models</h2>
 
 <blockquote>
-<p><em>Do a little turn on the catwalk</em></p>
+<p><em><a href="http://youtu.be/YFmsgHfuXpA#t=56">Do a little turn on the catwalk</a></em></p>
 </blockquote>
 
 <p>Models are fairly straightforward. They tell Yii how our cupcake object is structured and where to find the data when we ask for it. In most cases, we can use Gii to automatically generate a model based off of the table structure in the database. This model can be altered and updated after it is generated, but Gii makes sure everything in the table makes it across to the model.</p>
@@ -204,7 +204,7 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 <a id="views" class="anchor" href="#views" aria-hidden="true"><span class="octicon octicon-link"></span></a>Views</h2>
 
 <blockquote>
-<p><em>I just adore a penthouse view</em></p>
+<p><em><a href="http://youtu.be/DrbPAt1_vc4#t=40">I just adore a penthouse view</a></em></p>
 </blockquote>
 
 <p>You'll notice in our Controller, the action we created was called <code>actionList</code>. </p>
