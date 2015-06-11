@@ -69,6 +69,7 @@
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Yii</span>;</span>
 <span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">app\models\Cupcakes</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\base\Controller</span>; </span>
 <span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\web\NotFoundHttpException</span>;</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">CupcakesController</span> <span class="pl-k">extends</span> <span class="pl-e">Controller</span></span>
@@ -79,7 +80,7 @@
 <span class="pl-s1">      <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-c1">NotFoundHttpException</span>;</span>
 <span class="pl-s1">    }</span>
 <span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span>render(<span class="pl-s"><span class="pl-pds">'</span>list<span class="pl-pds">'</span></span>, [</span>
-<span class="pl-s1">      <span class="pl-s"><span class="pl-pds">'</span>model<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$model</span>;</span>
+<span class="pl-s1">      <span class="pl-s"><span class="pl-pds">'</span>model<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$model</span>,</span>
 <span class="pl-s1">    ]);</span>
 <span class="pl-s1">  }</span>
 <span class="pl-s1">}</span></pre></div>
@@ -141,7 +142,7 @@
 </tbody>
 </table>
 
-<p>Before we wire up a model and view to the <code>controllers/cupcakes.php</code>, let's create our table using Yii's migration feature.</p>
+<p>Before we wire up a model and view to the <code>controllers/CupcakesController.php</code>, let's create our table using Yii's migration feature.</p>
 
 <h2>
 <a id="migrations" class="anchor" href="#migrations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Migrations</h2>
@@ -200,7 +201,7 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 
 <p>Of particular note in the <code>Cupcakes</code> model Gii generates is the <code>rules()</code> method, which allows you to set validation parameters for each field. Also, if your table uses field names that aren't super-great for human-readability, you can map them to better descriptors in the <code>attributeLabels()</code> method.</p>
 
-<p>Now that we have a <code>Cupcakes</code> model and a <code>Cupcakes</code> controller, it's time to make a Cupcakes view!</p>
+<p>Now that we have a <code>Cupcakes</code> model and a <code>CupcakesController</code>, it's time to make a Cupcakes view!</p>
 
 <h2>
 <a id="views" class="anchor" href="#views" aria-hidden="true"><span class="octicon octicon-link"></span></a>Views</h2>
