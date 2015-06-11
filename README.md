@@ -1,6 +1,8 @@
 # Yii2
 ####Let's make some delicious cupcakes!
 
+_Before you get started, you'll probably want to [get your environment configured](https://github.com/vybeauregard/Yii2-Cupcakes/wiki)._
+
 _index.php_
 ```php
 // Include the Yii framework
