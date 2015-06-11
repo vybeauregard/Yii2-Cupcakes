@@ -150,4 +150,4 @@ echo GridView::widget([
   ]);
 ```
 
-GridView is a lovely Yii widget that will render a lovely grid with all of your cupcakes neatly aligned and sortable by any column you desire!
+[GridView](http://www.yiiframework.com/doc-2.0/yii-grid-gridview.html) is a handy Yii widget that will render a lovely grid with all of your cupcakes neatly aligned and sortable by any column the user desires!
