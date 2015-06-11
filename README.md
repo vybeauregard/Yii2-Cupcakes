@@ -93,7 +93,7 @@ The `Schema::TYPE_` constants allow Yii to remain database-engine agnostic if yo
 
 `batchInsert()` allows us to pre-populate the table with data as the table is created. This is helpful if you know ahead of time what data records will be required in the table. [Here are the Yii2 docs on `batchInsert()`](http://www.yiiframework.com/doc-2.0/yii-db-migration.html#batchInsert()-detail).
 
-Once the migration file is saved, return to the command line and execute `./yii migrate/up`. You will be prompted to confirm the alteration, then the cupcakes table will be created.
+Once the migration file is saved, return to the command line and execute `./yii migrate`. You will be prompted to confirm the alteration, then the cupcakes table will be created.
 
 ##Models
 > _[Do a little turn on the catwalk](http://youtu.be/YFmsgHfuXpA#t=56)_
