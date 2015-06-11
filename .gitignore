@@ -28,6 +28,8 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
+#database files
+/db/*.sqlite
 =======
 vendor/
 composer.lock
