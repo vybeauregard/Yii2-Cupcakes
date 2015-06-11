@@ -77,7 +77,7 @@ Since we're just creating a table to hold some cupcakes, we'll just add the `cre
         'fondant' => Schema::TYPE_STRING,
         'calories' => Schema::TYPE_INTEGER,
       ]);
-      $this->batchInsert('sites', ['name', 'description', 'cake_flavor_1', 'cake_flavor_2', 'cake_color', 'icing_flavor', 'icing_color', 'fondant', 'calories'], [
+      $this->batchInsert('cupcakes', ['name', 'description', 'cake_flavor_1', 'cake_flavor_2', 'cake_color', 'icing_flavor', 'icing_color', 'fondant', 'calories'], [
         ['Marble', 'Marble', 'Chocolate', 'Vanilla', 'Marble', 'Butter Cream', 'Ivory', 'No', '220'],
         ['Pumpkin Mania', 'It looks and tastes like a whole pumpkin!', 'Pumpkin', 'null', 'Orange', 'Cream Cheese', 'White', 'No', '190'],
         ['Power Up!', 'Mushrooms inspired by Super Mario Bros.', 'Carrot Cake', 'null', 'Brown', 'Cream Cheese', 'White', 'Yes', '245'],
