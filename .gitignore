@@ -28,9 +28,6 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-#Yii stuff
-yii
-yii.bat
 =======
 vendor/
 composer.lock
