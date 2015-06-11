@@ -22,7 +22,7 @@ One large concern for any framework is keeping code organized. This fosters a co
 
 Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at `cupcakes/list` to talk to the cupcakes controller and find out what it says to do with `actionList()`. From the context provided by the verb list, we can deduct that this route will produce a list of all the cupcakes that are available.
 
-_controllers/cupcakes.php_
+_controllers/CupcakesController.php_
 ```php
 namespace app\controllers;
 
