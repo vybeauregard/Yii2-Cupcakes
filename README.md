@@ -38,7 +38,7 @@ class CupcakesController extends Controller
       throw new NotFoundHttpException;
     }
     return $this->render('list', [
-      'model' => $model;
+      'model' => $model,
     ]);
   }
 }
