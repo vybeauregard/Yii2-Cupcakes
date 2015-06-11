@@ -18,7 +18,7 @@ The database in the project has been configured to create an SQLite data store i
 One large concern for any framework is keeping code organized. This fosters a collaborative environment because it makes it easier to deduce where a particular function is being called from. With Yii2, there are a lot of files that need to be accessible to the server, but not accessible from a web browser (e.g. controllers, db config, vendor files). That's where our `web` folder comes in handy. We will tell the web server that the root of the site is located at `web` and php will still be able to access all of the other files in our project without exposing them to the world.
 
 ##Controllers
-> _Where do you think **you're** going?_
+> _[Where do you think **you're** going?](http://youtu.be/mk74WprmZxY#t=12)_
 
 Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at `cupcakes/list` to talk to the cupcakes controller and find out what it says to do with `actionList()`. From the context provided by the verb list, we can deduct that this route will produce a list of all the cupcakes that are available.
 
