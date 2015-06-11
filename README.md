@@ -120,7 +120,7 @@ You'll notice in our Controller, the action we created was called `actionList`.
 ```
 So we need to create a view called `list.php` in our `views/cupcakes` directory. By default, this is where Yii looks for the view associated with the controller handling our request.
 
-_list.php_
+_views/cupcakes/list.php_
 ```php
 use yii\grid\GridView;
 use yii\data\ActiveDataProvider;
