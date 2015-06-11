@@ -68,13 +68,13 @@
 <div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-k">namespace</span> <span class="pl-en">app\controllers</span>;</span>
 <span class="pl-s1"></span>
 <span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Yii</span>;</span>
-<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">app\models\Cupcake</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">app\models\Cupcakes</span>;</span>
 <span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\web\NotFoundHttpException</span>;</span>
 <span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">CupcakeController</span> <span class="pl-k">extends</span> <span class="pl-e">Controller</span></span>
+<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">CupcakesController</span> <span class="pl-k">extends</span> <span class="pl-e">Controller</span></span>
 <span class="pl-s1">{</span>
 <span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">actionList</span>(){</span>
-<span class="pl-s1">    <span class="pl-smi">$model</span> <span class="pl-k">=</span> <span class="pl-c1">Cupcake</span><span class="pl-k">::</span>find();</span>
+<span class="pl-s1">    <span class="pl-smi">$model</span> <span class="pl-k">=</span> <span class="pl-c1">Cupcakes</span><span class="pl-k">::</span>find();</span>
 <span class="pl-s1">    <span class="pl-k">if</span>(<span class="pl-smi">$model</span> <span class="pl-k">===</span> <span class="pl-c1">null</span>){</span>
 <span class="pl-s1">      <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-c1">NotFoundHttpException</span>;</span>
 <span class="pl-s1">    }</span>
@@ -168,7 +168,7 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 <span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>fondant<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">Schema</span><span class="pl-k">::</span><span class="pl-c1">TYPE_STRING</span>,</span>
 <span class="pl-s1">        <span class="pl-s"><span class="pl-pds">'</span>calories<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">Schema</span><span class="pl-k">::</span><span class="pl-c1">TYPE_INTEGER</span>,</span>
 <span class="pl-s1">      ]);</span>
-<span class="pl-s1">      <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span>batchInsert(<span class="pl-s"><span class="pl-pds">'</span>sites<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>description<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>cake_flavor_1<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>cake_flavor_2<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>cake_color<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>icing_flavor<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>icing_color<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>fondant<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>calories<span class="pl-pds">'</span></span>], [</span>
+<span class="pl-s1">      <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span>batchInsert(<span class="pl-s"><span class="pl-pds">'</span>cupcakes<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>description<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>cake_flavor_1<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>cake_flavor_2<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>cake_color<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>icing_flavor<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>icing_color<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>fondant<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>calories<span class="pl-pds">'</span></span>], [</span>
 <span class="pl-s1">        [<span class="pl-s"><span class="pl-pds">'</span>Marble<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Marble<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Chocolate<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Vanilla<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Marble<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Butter Cream<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Ivory<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>No<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>220<span class="pl-pds">'</span></span>],</span>
 <span class="pl-s1">        [<span class="pl-s"><span class="pl-pds">'</span>Pumpkin Mania<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>It looks and tastes like a whole pumpkin!<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Pumpkin<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>null<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Orange<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Cream Cheese<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>White<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>No<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>190<span class="pl-pds">'</span></span>],</span>
 <span class="pl-s1">        [<span class="pl-s"><span class="pl-pds">'</span>Power Up!<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Mushrooms inspired by Super Mario Bros.<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Carrot Cake<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>null<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Brown<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Cream Cheese<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>White<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>Yes<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>245<span class="pl-pds">'</span></span>],</span>
@@ -183,7 +183,7 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 
 <p><code>batchInsert()</code> allows us to pre-populate the table with data as the table is created. This is helpful if you know ahead of time what data records will be required in the table. <a href="http://www.yiiframework.com/doc-2.0/yii-db-migration.html#batchInsert()-detail">Here are the Yii2 docs on <code>batchInsert()</code></a>.</p>
 
-<p>Once the migration file is saved, return to the command line and execute <code>./yii migrate/up</code>. You will be prompted to confirm the alteration, then the cupcakes table will be created.</p>
+<p>Once the migration file is saved, return to the command line and execute <code>./yii migrate</code>. You will be prompted to confirm the alteration, then the cupcakes table will be created.</p>
 
 <h2>
 <a id="models" class="anchor" href="#models" aria-hidden="true"><span class="octicon octicon-link"></span></a>Models</h2>
@@ -192,13 +192,15 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 <p><em><a href="http://youtu.be/YFmsgHfuXpA#t=56">Do a little turn on the catwalk</a></em></p>
 </blockquote>
 
-<p>Models are fairly straightforward. They tell Yii how our cupcake object is structured and where to find the data when we ask for it. In most cases, we can use Gii to automatically generate a model based off of the table structure in the database. This model can be altered and updated after it is generated, but Gii makes sure everything in the table makes it across to the model.</p>
+<p>Models are fairly straightforward. They tell Yii how our cupcakes object is structured and where to find the data when we ask for it. In most cases, we can use Gii to automatically generate a model based off of the table structure in the database. This model can be altered and updated after it is generated, but Gii makes sure everything in the table makes it across to the model.</p>
 
 <p><em>Gii can be accessed in dev environments at</em> http://your-dev-url/gii/</p>
 
-<p>Of particular note in the cupcake model Gii generates is the <code>rules()</code> method, which allows you to set validation parameters for each field. Also, if your table uses field names that aren't super-great for human-readability, you can map them to better descriptors in the <code>attributeLabels()</code> method.</p>
+<p>Take a look at the wiki to quickly <a href="https://github.com/vybeauregard/Yii2-Cupcakes/wiki/Gii">dip your toes in the Gii waters</a> and create our <code>Cupcakes</code> model.</p>
 
-<p>Now that we have a Cupcake model and a Cupcake controller, it's time to make a Cupcake view!</p>
+<p>Of particular note in the <code>Cupcakes</code> model Gii generates is the <code>rules()</code> method, which allows you to set validation parameters for each field. Also, if your table uses field names that aren't super-great for human-readability, you can map them to better descriptors in the <code>attributeLabels()</code> method.</p>
+
+<p>Now that we have a <code>Cupcakes</code> model and a <code>Cupcakes</code> controller, it's time to make a Cupcakes view!</p>
 
 <h2>
 <a id="views" class="anchor" href="#views" aria-hidden="true"><span class="octicon octicon-link"></span></a>Views</h2>
