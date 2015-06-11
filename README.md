@@ -3,16 +3,6 @@
 
 _Before you get started, you'll probably want to [get your environment configured](https://github.com/vybeauregard/Yii2-Cupcakes/wiki)._
 
-_index.php_
-```php
-// Include the Yii framework
-require(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
-// Get the configuration
-$config = require(__DIR__ . '/../config/web.php');
-// Make and launch the application immediately 
-(new yii\web\Application($config))->run();
-```
-
 _config.php_ holds configuration values for every part of your app.
 - error handling
 - caching directives
@@ -20,7 +10,15 @@ _config.php_ holds configuration values for every part of your app.
 - time zone settings
 - url management
 
+The database in the project has been configured to create an SQLite data store in the `db` directory.
+
+##File structure
+> _or, "Keeping the Varmints Out"_
+
+One large concern for any framework is keeping code organized. This fosters a collaborative environment because it makes it easier to deduce where a particular function is being called from. With Yii2, there are a lot of files that need to be accessible to the server, but not accessible from a web browser (e.g. controllers, db config, vendor files). That's where our `web` folder comes in handy. We will tell the web server that the root of the site is located at `web` and php will still be able to access all of the other files in our project without exposing them to the world.
+
 ##Controllers
+> _Where do you think **you're** going?_
 
 Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at `cupcakes/list` to talk to the cupcakes controller and find out what it says to do with `actionList()`. From the context provided by the verb list, we can deduct that this route will produce a list of all the cupcakes that are available.
 
@@ -58,6 +56,8 @@ id|name|description|cake_flavor_1|cake_flavor_2|cake_color|icing_flavor|icing_co
 Before we wire up a model and view to the `controllers/cupcakes.php`, let's create our table using Yii's migration feature.
 
 ##Migrations
+> _Are you suggesting coconuts migrate?_
+
 To initialize a new migration, navigate to your project in the command line and execute `./yii migrate/create create_cupcakes_table`. This will create a new migration file `m150610_160800_create_cupcakes_table.php` with today's date and time in the file name. Inside the migration class are two methods: `up()` and `down()`. When rolling back migrations, `down` will be executed. When applying a migration, `up` is executed.
 If you're using a transactional database engine, `safeUp()` and `safeDown()` will do the same, but in a transaction-safe manner.
 Since we're just creating a table to hold some cupcakes, we'll just add the `createTable()` information to `up()` and the `dropTable()` command to `down()`.
@@ -96,6 +96,7 @@ The `Schema::TYPE_` constants allow Yii to remain database-engine agnostic if yo
 Once the migration file is saved, return to the command line and execute `./yii migrate/up`. You will be prompted to confirm the alteration, then the cupcakes table will be created.
 
 ##Models
+> _Do a little turn on the catwalk_
 
 Models are fairly straightforward. They tell Yii how our cupcake object is structured and where to find the data when we ask for it. In most cases, we can use Gii to automatically generate a model based off of the table structure in the database. This model can be altered and updated after it is generated, but Gii makes sure everything in the table makes it across to the model.
 
@@ -106,6 +107,8 @@ Of particular note in the cupcake model Gii generates is the `rules()` method, w
 Now that we have a Cupcake model and a Cupcake controller, it's time to make a Cupcake view!
 
 ##Views
+> _I just adore a penthouse view_
+
 You'll notice in our Controller, the action we created was called `actionList`. 
 ```php
     return $this->render('list', [
