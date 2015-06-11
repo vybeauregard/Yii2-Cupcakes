@@ -10,7 +10,7 @@ _config.php_ holds configuration values for every part of your app.
 - time zone settings
 - url management
 
-The database in the project has been configured to create an SQLite data store in the `db` directory.
+The database in the project has been configured to create an [SQLite](https://github.com/vybeauregard/Yii2-Cupcakes/wiki/SQLite) data store in the `db` directory.
 
 ##File structure
 > _or, "[Keeping the Varmints Out](http://youtu.be/THWCH2Nwsss)"_
