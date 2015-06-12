@@ -138,7 +138,7 @@
 If you're using a transactional database engine, <code>safeUp()</code> and <code>safeDown()</code> will do the same, but in a transaction-safe manner.
 Since we're just creating a table to hold some cupcakes, we'll just add the <code>createTable()</code> information to <code>up()</code> and the <code>dropTable()</code> command to <code>down()</code>.</p>
 
-<p><em><code>migrations/m150610_160800_create_cupcakes_table.php</code></em></p>
+<p><em><code>migrations/m150610_160800_create_cupcakes_table.php</code>:</em></p>
 
 <div class="highlight highlight-php"><pre><span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">up</span>()</span>
 <span class="pl-s1">    {</span>
@@ -195,9 +195,9 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 <p><em><a href="http://youtu.be/mk74WprmZxY#t=12">Where do you think <strong>you're</strong> going?</a></em></p>
 </blockquote>
 
-<p>Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at <code>cupcakes/list</code> to talk to the cupcakes controller and find out what it says to do with <code>actionList()</code>. From the context provided by the verb list, we can deduct that this route will produce a list of all the cupcakes that are available.</p>
+<p>Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at <code>cupcakes/list</code> to talk to the cupcakes controller and find out what it says to do with <code>actionList()</code>. From the context provided by the verb <strong><em>list</em></strong>, we can deduct that this route will produce a list of all the cupcakes that are available.</p>
 
-<p><em><code>controllers/CupcakesController.php</code></em></p>
+<p><em><code>controllers/CupcakesController.php</code>:</em></p>
 
 <div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-k">namespace</span> <span class="pl-en">app\controllers</span>;</span>
 <span class="pl-s1"></span>
@@ -228,7 +228,8 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 <p><em><a href="http://youtu.be/DrbPAt1_vc4#t=40">I just adore a penthouse view</a></em></p>
 </blockquote>
 
-<p>You'll notice in our Controller, the action we created was called <code>actionList</code>. </p>
+<p>You'll notice in our Controller, the action we created was called <code>actionList</code>. 
+<em><code>controllers/CupcakesController.php</code>:</em></p>
 
 <div class="highlight highlight-php"><pre><span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span>render(<span class="pl-s"><span class="pl-pds">'</span>list<span class="pl-pds">'</span></span>, [</span>
 <span class="pl-s1">      <span class="pl-s"><span class="pl-pds">'</span>model<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$model</span>;</span>
@@ -236,7 +237,7 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 
 <p>So we need to create a view called <code>list.php</code> in our <code>views/cupcakes</code> directory. By default, this is where Yii looks for the view associated with the controller handling our request.</p>
 
-<p><em><code>views/cupcakes/list.php</code></em></p>
+<p><em><code>views/cupcakes/list.php</code>:</em></p>
 
 <div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\grid\GridView</span>;</span>
 <span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\data\ActiveDataProvider</span>;</span>
