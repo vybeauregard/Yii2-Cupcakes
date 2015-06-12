@@ -19,6 +19,7 @@ One large concern for any framework is keeping code organized. This fosters a co
 
 Directories we will be working with today:
 * `migrations`
+* `db`
 * `controllers`
 * `models`
 * `views`
