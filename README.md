@@ -84,7 +84,7 @@ If you need to make any changes to your database structure, start a new migratio
 ##Models
 > _[Do a little turn on the catwalk](http://youtu.be/YFmsgHfuXpA#t=56)_
 
-Models are fairly straightforward. They tell Yii how our cupcakes object is structured and where to find the data when we ask for it. In most cases, we can use Gii to automatically generate a model based off of the table structure in the database. This model can be altered and updated after it is generated, but Gii makes sure everything in the table makes it across to the model.
+Models are fairly straightforward. They tell Yii how our cupcakes object is structured and where to find the data when we ask for it. In typical cases, we can use Gii to automatically generate a model based off of the table structure in the database. This model can be altered and updated after it is generated, but Gii makes sure everything in the table makes it across to the model.
 
 _Gii can be accessed in dev environments at_ http://your-dev-url/gii/
 
