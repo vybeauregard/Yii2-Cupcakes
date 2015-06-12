@@ -45,7 +45,7 @@ To initialize a new migration, navigate to your project in the command line and 
 If you're using a transactional database engine, `safeUp()` and `safeDown()` will do the same, but in a transaction-safe manner.
 Since we're just creating a table to hold some cupcakes, we'll just add the `createTable()` information to `up()` and the `dropTable()` command to `down()`.
 
-_migrations/m150610_160800_create_cupcakes_table.php_
+_`migrations/m150610_160800_create_cupcakes_table.php`_
 ```php
     public function up()
     {
@@ -97,7 +97,7 @@ Of particular note in the `models/Cupcakes.php` model Gii generates is the `rule
 
 Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at `cupcakes/list` to talk to the cupcakes controller and find out what it says to do with `actionList()`. From the context provided by the verb list, we can deduct that this route will produce a list of all the cupcakes that are available.
 
-_controllers/CupcakesController.php_
+_`controllers/CupcakesController.php`_
 ```php
 namespace app\controllers;
 
@@ -133,7 +133,7 @@ You'll notice in our Controller, the action we created was called `actionList`.
 ```
 So we need to create a view called `list.php` in our `views/cupcakes` directory. By default, this is where Yii looks for the view associated with the controller handling our request.
 
-_views/cupcakes/list.php_
+_`views/cupcakes/list.php`_
 ```php
 use yii\grid\GridView;
 use yii\data\ActiveDataProvider;
