@@ -17,6 +17,13 @@ The database in the project has been configured to create an [SQLite](https://gi
 
 One large concern for any framework is keeping code organized. This fosters a collaborative environment because it makes it easier to deduce where a particular function is being called from. With Yii2, there are a lot of files that need to be accessible to the server, but not accessible from a web browser (e.g. controllers, db config, vendor files). That's where our `web` folder comes in handy. We will tell the web server that the root of the site is located at `web` and php will still be able to access all of the other files in our project without exposing them to the world.
 
+Directories we will be working with today:
+* `migrations`
+* `controllers`
+* `models`
+* `views`
+* `web`
+
 ##Cupcakes!
 
 Here's the simple data structure we'll be working with:
@@ -70,6 +77,8 @@ The `Schema::TYPE_` constants allow Yii to remain database-engine agnostic if yo
 
 Once the migration file is saved, return to the command line and execute `./yii migrate`. You will be prompted to confirm the alteration, then the cupcakes table will be created.
 
+If you need to make any changes to your database structure, start a new migration using the same process we just went through. This could include adding columns, updating indexes, adding tables, inserting data, anything that needs to be present in the production database.
+
 ##Models
 > _[Do a little turn on the catwalk](http://youtu.be/YFmsgHfuXpA#t=56)_
 
@@ -79,7 +88,7 @@ _Gii can be accessed in dev environments at_ http://your-dev-url/gii/
 
 Take a look at the wiki to quickly [dip your toes in the Gii waters](https://github.com/vybeauregard/Yii2-Cupcakes/wiki/Gii) and create our `Cupcakes` model.
 
-Of particular note in the `Cupcakes` model Gii generates is the `rules()` method, which allows you to set validation parameters for each field. Also, if your table uses field names that aren't super-great for human-readability, you can map them to better descriptors in the `attributeLabels()` method.
+Of particular note in the `models/Cupcakes.php` model Gii generates is the `rules()` method, which allows you to set validation parameters for each field. Also, if your table uses field names that aren't super-great for human-readability, you can map them to better descriptors in the `attributeLabels()` method.
 
 ##Controllers
 > _[Where do you think **you're** going?](http://youtu.be/mk74WprmZxY#t=12)_
