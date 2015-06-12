@@ -54,38 +54,20 @@
 
 <p>One large concern for any framework is keeping code organized. This fosters a collaborative environment because it makes it easier to deduce where a particular function is being called from. With Yii2, there are a lot of files that need to be accessible to the server, but not accessible from a web browser (e.g. controllers, db config, vendor files). That's where our <code>web</code> folder comes in handy. We will tell the web server that the root of the site is located at <code>web</code> and php will still be able to access all of the other files in our project without exposing them to the world.</p>
 
+<p>Directories we will be working with today:</p>
+
+<ul>
+<li><code>migrations</code></li>
+<li><code>controllers</code></li>
+<li><code>models</code></li>
+<li><code>views</code></li>
+<li><code>web</code></li>
+</ul>
+
 <h2>
-<a id="controllers" class="anchor" href="#controllers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Controllers</h2>
+<a id="cupcakes" class="anchor" href="#cupcakes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cupcakes!</h2>
 
-<blockquote>
-<p><em><a href="http://youtu.be/mk74WprmZxY#t=12">Where do you think <strong>you're</strong> going?</a></em></p>
-</blockquote>
-
-<p>Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at <code>cupcakes/list</code> to talk to the cupcakes controller and find out what it says to do with <code>actionList()</code>. From the context provided by the verb list, we can deduct that this route will produce a list of all the cupcakes that are available.</p>
-
-<p><em>controllers/CupcakesController.php</em></p>
-
-<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-k">namespace</span> <span class="pl-en">app\controllers</span>;</span>
-<span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Yii</span>;</span>
-<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">app\models\Cupcakes</span>;</span>
-<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\base\Controller</span>; </span>
-<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\web\NotFoundHttpException</span>;</span>
-<span class="pl-s1"></span>
-<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">CupcakesController</span> <span class="pl-k">extends</span> <span class="pl-e">Controller</span></span>
-<span class="pl-s1">{</span>
-<span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">actionList</span>(){</span>
-<span class="pl-s1">    <span class="pl-smi">$model</span> <span class="pl-k">=</span> <span class="pl-c1">Cupcakes</span><span class="pl-k">::</span>find();</span>
-<span class="pl-s1">    <span class="pl-k">if</span>(<span class="pl-smi">$model</span> <span class="pl-k">===</span> <span class="pl-c1">null</span>){</span>
-<span class="pl-s1">      <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-c1">NotFoundHttpException</span>;</span>
-<span class="pl-s1">    }</span>
-<span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span>render(<span class="pl-s"><span class="pl-pds">'</span>list<span class="pl-pds">'</span></span>, [</span>
-<span class="pl-s1">      <span class="pl-s"><span class="pl-pds">'</span>model<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$model</span>,</span>
-<span class="pl-s1">    ]);</span>
-<span class="pl-s1">  }</span>
-<span class="pl-s1">}</span></pre></div>
-
-<p>Cupcakes! Here's the simple data structure we'll be working with:</p>
+<p>Here's the simple data structure we'll be working with:</p>
 
 <table>
 <thead>
@@ -186,6 +168,8 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 
 <p>Once the migration file is saved, return to the command line and execute <code>./yii migrate</code>. You will be prompted to confirm the alteration, then the cupcakes table will be created.</p>
 
+<p>If you need to make any changes to your database structure, start a new migration using the same process we just went through. This could include adding columns, updating indexes, adding tables, inserting data, anything that needs to be present in the production database.</p>
+
 <h2>
 <a id="models" class="anchor" href="#models" aria-hidden="true"><span class="octicon octicon-link"></span></a>Models</h2>
 
@@ -199,7 +183,38 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 
 <p>Take a look at the wiki to quickly <a href="https://github.com/vybeauregard/Yii2-Cupcakes/wiki/Gii">dip your toes in the Gii waters</a> and create our <code>Cupcakes</code> model.</p>
 
-<p>Of particular note in the <code>Cupcakes</code> model Gii generates is the <code>rules()</code> method, which allows you to set validation parameters for each field. Also, if your table uses field names that aren't super-great for human-readability, you can map them to better descriptors in the <code>attributeLabels()</code> method.</p>
+<p>Of particular note in the <code>models/Cupcakes.php</code> model Gii generates is the <code>rules()</code> method, which allows you to set validation parameters for each field. Also, if your table uses field names that aren't super-great for human-readability, you can map them to better descriptors in the <code>attributeLabels()</code> method.</p>
+
+<h2>
+<a id="controllers" class="anchor" href="#controllers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Controllers</h2>
+
+<blockquote>
+<p><em><a href="http://youtu.be/mk74WprmZxY#t=12">Where do you think <strong>you're</strong> going?</a></em></p>
+</blockquote>
+
+<p>Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at <code>cupcakes/list</code> to talk to the cupcakes controller and find out what it says to do with <code>actionList()</code>. From the context provided by the verb list, we can deduct that this route will produce a list of all the cupcakes that are available.</p>
+
+<p><em>controllers/CupcakesController.php</em></p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-k">namespace</span> <span class="pl-en">app\controllers</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Yii</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">app\models\Cupcakes</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\base\Controller</span>; </span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\web\NotFoundHttpException</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">class</span> <span class="pl-en">CupcakesController</span> <span class="pl-k">extends</span> <span class="pl-e">Controller</span></span>
+<span class="pl-s1">{</span>
+<span class="pl-s1">  <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">actionList</span>(){</span>
+<span class="pl-s1">    <span class="pl-smi">$model</span> <span class="pl-k">=</span> <span class="pl-c1">Cupcakes</span><span class="pl-k">::</span>find();</span>
+<span class="pl-s1">    <span class="pl-k">if</span>(<span class="pl-smi">$model</span> <span class="pl-k">===</span> <span class="pl-c1">null</span>){</span>
+<span class="pl-s1">      <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-c1">NotFoundHttpException</span>;</span>
+<span class="pl-s1">    }</span>
+<span class="pl-s1">    <span class="pl-k">return</span> <span class="pl-smi">$this</span><span class="pl-k">-&gt;</span>render(<span class="pl-s"><span class="pl-pds">'</span>list<span class="pl-pds">'</span></span>, [</span>
+<span class="pl-s1">      <span class="pl-s"><span class="pl-pds">'</span>model<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-smi">$model</span>,</span>
+<span class="pl-s1">    ]);</span>
+<span class="pl-s1">  }</span>
+<span class="pl-s1">}</span></pre></div>
 
 <p>Now that we have a <code>Cupcakes</code> model and a <code>CupcakesController</code>, it's time to make a Cupcakes view!</p>
 
