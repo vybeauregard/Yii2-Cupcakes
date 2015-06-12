@@ -138,7 +138,7 @@
 If you're using a transactional database engine, <code>safeUp()</code> and <code>safeDown()</code> will do the same, but in a transaction-safe manner.
 Since we're just creating a table to hold some cupcakes, we'll just add the <code>createTable()</code> information to <code>up()</code> and the <code>dropTable()</code> command to <code>down()</code>.</p>
 
-<p><em>migrations/m150610_160800_create_cupcakes_table.php</em></p>
+<p><em><code>migrations/m150610_160800_create_cupcakes_table.php</code></em></p>
 
 <div class="highlight highlight-php"><pre><span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">up</span>()</span>
 <span class="pl-s1">    {</span>
@@ -197,7 +197,7 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 
 <p>Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at <code>cupcakes/list</code> to talk to the cupcakes controller and find out what it says to do with <code>actionList()</code>. From the context provided by the verb list, we can deduct that this route will produce a list of all the cupcakes that are available.</p>
 
-<p><em>controllers/CupcakesController.php</em></p>
+<p><em><code>controllers/CupcakesController.php</code></em></p>
 
 <div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-k">namespace</span> <span class="pl-en">app\controllers</span>;</span>
 <span class="pl-s1"></span>
@@ -236,7 +236,7 @@ Since we're just creating a table to hold some cupcakes, we'll just add the <cod
 
 <p>So we need to create a view called <code>list.php</code> in our <code>views/cupcakes</code> directory. By default, this is where Yii looks for the view associated with the controller handling our request.</p>
 
-<p><em>views/cupcakes/list.php</em></p>
+<p><em><code>views/cupcakes/list.php</code></em></p>
 
 <div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\grid\GridView</span>;</span>
 <span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">yii\data\ActiveDataProvider</span>;</span>
