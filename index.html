@@ -133,9 +133,11 @@
 <p><em><a href="http://youtu.be/w8Rn_f75UHs#t=80">Are you suggesting coconuts migrate?</a></em></p>
 </blockquote>
 
-<p>To initialize a new migration, navigate to your project in the command line and execute <code>./yii migrate/create create_cupcakes_table</code>. This will create a new migration file <code>m150610_160800_create_cupcakes_table.php</code> with today's date and time in the file name. Inside the migration class are two methods: <code>up()</code> and <code>down()</code>. When rolling back migrations, <code>down</code> will be executed. When applying a migration, <code>up</code> is executed.
+<p>To initialize a new migration, navigate to your project in the command line and execute <code>./yii migrate/create create_cupcakes_table</code>. This will create a new migration file <code>migrations/m150610_160800_create_cupcakes_table.php</code> with today's date and time in the file name. Inside the migration class are two methods: <code>up()</code> and <code>down()</code>. When rolling back migrations, <code>down</code> will be executed. When applying a migration, <code>up</code> is executed.
 If you're using a transactional database engine, <code>safeUp()</code> and <code>safeDown()</code> will do the same, but in a transaction-safe manner.
 Since we're just creating a table to hold some cupcakes, we'll just add the <code>createTable()</code> information to <code>up()</code> and the <code>dropTable()</code> command to <code>down()</code>.</p>
+
+<p><em>migrations/m150610_160800_create_cupcakes_table.php</em></p>
 
 <div class="highlight highlight-php"><pre><span class="pl-s1">    <span class="pl-k">public</span> <span class="pl-k">function</span> <span class="pl-en">up</span>()</span>
 <span class="pl-s1">    {</span>
