@@ -17,35 +17,9 @@ The database in the project has been configured to create an [SQLite](https://gi
 
 One large concern for any framework is keeping code organized. This fosters a collaborative environment because it makes it easier to deduce where a particular function is being called from. With Yii2, there are a lot of files that need to be accessible to the server, but not accessible from a web browser (e.g. controllers, db config, vendor files). That's where our `web` folder comes in handy. We will tell the web server that the root of the site is located at `web` and php will still be able to access all of the other files in our project without exposing them to the world.
 
-##Controllers
-> _[Where do you think **you're** going?](http://youtu.be/mk74WprmZxY#t=12)_
+##Cupcakes!
 
-Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at `cupcakes/list` to talk to the cupcakes controller and find out what it says to do with `actionList()`. From the context provided by the verb list, we can deduct that this route will produce a list of all the cupcakes that are available.
-
-_controllers/CupcakesController.php_
-```php
-namespace app\controllers;
-
-use Yii;
-use app\models\Cupcakes;
-use yii\base\Controller; 
-use yii\web\NotFoundHttpException;
-
-class CupcakesController extends Controller
-{
-  public function actionList(){
-    $model = Cupcakes::find();
-    if($model === null){
-      throw new NotFoundHttpException;
-    }
-    return $this->render('list', [
-      'model' => $model,
-    ]);
-  }
-}
-```
-
-Cupcakes! Here's the simple data structure we'll be working with:
+Here's the simple data structure we'll be working with:
 
 id|name|description|cake_flavor_1|cake_flavor_2|cake_color|icing_flavor|icing_color|fondant|calories
 ---|---|---|---|---|---|---|---|---|---
@@ -106,6 +80,34 @@ _Gii can be accessed in dev environments at_ http://your-dev-url/gii/
 Take a look at the wiki to quickly [dip your toes in the Gii waters](https://github.com/vybeauregard/Yii2-Cupcakes/wiki/Gii) and create our `Cupcakes` model.
 
 Of particular note in the `Cupcakes` model Gii generates is the `rules()` method, which allows you to set validation parameters for each field. Also, if your table uses field names that aren't super-great for human-readability, you can map them to better descriptors in the `attributeLabels()` method.
+
+##Controllers
+> _[Where do you think **you're** going?](http://youtu.be/mk74WprmZxY#t=12)_
+
+Controllers direct traffic between the browser and the data. Yii2 knows that when a user requests the page at `cupcakes/list` to talk to the cupcakes controller and find out what it says to do with `actionList()`. From the context provided by the verb list, we can deduct that this route will produce a list of all the cupcakes that are available.
+
+_controllers/CupcakesController.php_
+```php
+namespace app\controllers;
+
+use Yii;
+use app\models\Cupcakes;
+use yii\base\Controller; 
+use yii\web\NotFoundHttpException;
+
+class CupcakesController extends Controller
+{
+  public function actionList(){
+    $model = Cupcakes::find();
+    if($model === null){
+      throw new NotFoundHttpException;
+    }
+    return $this->render('list', [
+      'model' => $model,
+    ]);
+  }
+}
+```
 
 Now that we have a `Cupcakes` model and a `CupcakesController`, it's time to make a Cupcakes view!
 
