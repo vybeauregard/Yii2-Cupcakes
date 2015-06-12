@@ -40,10 +40,11 @@ Before we wire up a model and view to the `controllers/CupcakesController.php`, 
 ##Migrations
 > _[Are you suggesting coconuts migrate?](http://youtu.be/w8Rn_f75UHs#t=80)_
 
-To initialize a new migration, navigate to your project in the command line and execute `./yii migrate/create create_cupcakes_table`. This will create a new migration file `m150610_160800_create_cupcakes_table.php` with today's date and time in the file name. Inside the migration class are two methods: `up()` and `down()`. When rolling back migrations, `down` will be executed. When applying a migration, `up` is executed.
+To initialize a new migration, navigate to your project in the command line and execute `./yii migrate/create create_cupcakes_table`. This will create a new migration file `migrations/m150610_160800_create_cupcakes_table.php` with today's date and time in the file name. Inside the migration class are two methods: `up()` and `down()`. When rolling back migrations, `down` will be executed. When applying a migration, `up` is executed.
 If you're using a transactional database engine, `safeUp()` and `safeDown()` will do the same, but in a transaction-safe manner.
 Since we're just creating a table to hold some cupcakes, we'll just add the `createTable()` information to `up()` and the `dropTable()` command to `down()`.
 
+_migrations/m150610_160800_create_cupcakes_table.php_
 ```php
     public function up()
     {
