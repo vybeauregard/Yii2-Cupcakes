@@ -5,8 +5,8 @@ angular.module('CupcakeApp.services', []).
 
     cupcakeAPI.getCupcakes = function() {
       return $http({
-        method: 'JSONP',
-        url: 'http://ergast.com/api/f1/2013/driverStandings.json?callback=JSON_CALLBACK'
+        method: 'GET',
+        url: 'cupcakes-api/index'
       });
     }
 

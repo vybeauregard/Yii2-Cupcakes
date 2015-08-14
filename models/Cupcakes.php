@@ -57,4 +57,14 @@ class Cupcakes extends \yii\db\ActiveRecord
             'calories' => 'Calories',
         ];
     }
+
+    public function viewCupcakeDetails($id)
+    {
+        return $this->findOne($id);
+    }
+
+    public function viewAllCupcakes()
+    {
+        return $this->find()->all();
+    }
 }
