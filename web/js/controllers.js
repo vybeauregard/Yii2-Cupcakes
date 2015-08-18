@@ -1,10 +1,15 @@
-angular.module('CupcakeApp.controllers', []).
-  controller('driversController', function($scope, cupcakeAPIservice) {
+angular.module('CupcakeApp.controllers', [])
+    .controller('cupcakesController', function($scope, cupcakeAPIservice) {
     $scope.cupcakesList = [];
 
     cupcakeAPIservice.getCupcakes().success(function (response) {
-        //Dig into the response to get the relevant data
-        console.log(response);
         $scope.cupcakesList = response;
     });
-  });
+
+    $scope.saveCupcakes = function(){
+        cupcakeAPIservice.saveCupcakes($scope.cupcakesList).success(function (response) {
+            $scope.cupcakesList = response;
+        });
+    }
+
+});

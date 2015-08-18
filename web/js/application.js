@@ -1,4 +1,5 @@
 angular.module('CupcakeApp', [
   'CupcakeApp.controllers',
-  'CupcakeApp.services'
+  'CupcakeApp.services',
+  // 'CupcakeApp.directives'
 ]);

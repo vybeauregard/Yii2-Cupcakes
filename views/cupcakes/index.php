@@ -1,8 +1,8 @@
-<body ng-app="CupcakeApp" ng-controller="driversController">
+<body ng-app="CupcakeApp" ng-controller="cupcakesController">
   <table class="table table-bordered table-collapse table-striped">
     <thead>
       <tr>
-          <th></th>
+          <th>ID</th>
           <th>Name</th>
           <th>Description</th>
           <th>Cake Flavor 1</th>
@@ -16,17 +16,18 @@
     </thead>
     <tbody>
       <tr ng-repeat="cupcake in cupcakesList">
-        <td>{{$index + 1}}</td>
-        <td>{{cupcake.name}}</td>
-        <td>{{cupcake.description}}</td>
-        <td>{{cupcake.cake_flavor_1}}</td>
-        <td>{{cupcake.cake_flavor_2}}</td>
-        <td>{{cupcake.cake_color}}</td>
-        <td>{{cupcake.icing_flavor}}</td>
-        <td>{{cupcake.icing_color}}</td>
-        <td>{{cupcake.fondant}}</td>
-        <td>{{cupcake.calories}}</td>
+        <td>{{cupcake.id}}</td>
+        <td><input class="form-control" ng-model="cupcake.name" /></td>
+        <td><textarea class="form-control" ng-model="cupcake.description"></textarea></td>
+        <td><input class="form-control" ng-model="cupcake.cake_flavor_1"></td>
+        <td><input class="form-control" ng-model="cupcake.cake_flavor_2"></td>
+        <td><input class="form-control" ng-model="cupcake.cake_color"></td>
+        <td><input class="form-control" ng-model="cupcake.icing_flavor"></td>
+        <td><input class="form-control" ng-model="cupcake.icing_color"></td>
+        <td><input class="form-control" ng-model="cupcake.fondant"></td>
+        <td><input type="number" class="form-control" ng-model="cupcake.calories"></td>
       </tr>
     </tbody>
   </table>
+  <input class="btn btn-success" type="button" value="Hello" ng-click="saveCupcakes()" />
 </body>
