@@ -1,5 +1,6 @@
 # Yii2
 ####Let's make some delicious cupcakes!
+[slide deck](http://htmlpreview.github.io/?https://raw.githubusercontent.com/vybeauregard/Yii2-angular/master/index.html)
 
 _Before you get started, you'll probably want to [get your environment configured](https://github.com/vybeauregard/Yii2-Cupcakes/wiki/Configuring-your-environment)._
 
