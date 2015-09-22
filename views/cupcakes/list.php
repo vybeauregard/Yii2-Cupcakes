@@ -1,21 +1,16 @@
 <?php
-use yii\grid\GridView;
+use app\customvendor\labcoat\LabcoatGrid;
 use yii\data\ActiveDataProvider;
 use app\models\Cupcakes;
+use app\models\CupcakesSearch;
 
 /* @var $this yii\web\View */
 $this->title = 'Available Cupcakes';
 $this->params['breadcrumbs'][] = $this->title;
 
-$dataProvider = new ActiveDataProvider([
-    'query' => Cupcakes::find(),
-    'pagination' => [
-        'pageSize' => 20,
-    ],
-]);
-
-echo GridView::widget([
+echo LabcoatGrid::widget([
     'dataProvider' => $dataProvider,
+    'filterModel' => $searchModel,
     'showHeader' => true,
     'showFooter' => false,
     'columns' => [
@@ -32,5 +27,7 @@ echo GridView::widget([
           'format' => 'integer',
         ],
     ],
+    'title' => 'Cupcakes',
+    'subtitle' => 'Betchya can\'t eat just one',
   ]);
  ?>

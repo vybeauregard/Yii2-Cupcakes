@@ -1,12 +1,22 @@
 <?php
 
 $params = require(__DIR__ . '/params.php');
+$params['labcoat'] = require(__DIR__ . '/labcoat.php');
 
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'aliases' => [
+        '@customvendor' => '@app/customvendor',
+    ],
     'components' => [
+        'view' => [
+            'theme' => [
+                'basePath' => '@app/customvendor/labcoat',
+                'baseUrl'   => 'customvendor/labcoat'
+            ]
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'jIY-oITk3qyub_Tq4jnaS-H2x_3uIpZV',
